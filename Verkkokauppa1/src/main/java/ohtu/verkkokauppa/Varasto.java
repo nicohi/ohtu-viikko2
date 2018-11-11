@@ -13,8 +13,8 @@ public class Varasto implements VarastoInterface {
         alustaTuotteet();
     }
 
-	public Varasto(KirjanpitoInterface kirjanpito) {
-        kirjanpito = kirjanpito;
+	public Varasto(KirjanpitoInterface ki) {
+        kirjanpito = ki;
         saldot = new HashMap<Tuote, Integer>();
         alustaTuotteet();
 	}
