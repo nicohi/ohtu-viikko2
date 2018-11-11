@@ -4,24 +4,20 @@ import java.util.*;
 
 public class Varasto implements VarastoInterface {
 
-    private static Varasto instanssi;
-
-    public static Varasto getInstance() {
-        if (instanssi == null) {
-            instanssi = new Varasto();
-        }
-
-        return instanssi;
-    }
-    
-    private Kirjanpito kirjanpito;
+    private KirjanpitoInterface kirjanpito;
     private HashMap<Tuote, Integer> saldot;  
     
-    private Varasto() {
-        kirjanpito = Kirjanpito.getInstance();
+    public Varasto() {
+        kirjanpito = new Kirjanpito();
         saldot = new HashMap<Tuote, Integer>();
         alustaTuotteet();
     }
+
+	public Varasto(KirjanpitoInterface kirjanpito) {
+        kirjanpito = kirjanpito;
+        saldot = new HashMap<Tuote, Integer>();
+        alustaTuotteet();
+	}
             
 	@Override
     public Tuote haeTuote(int id){

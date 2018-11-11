@@ -9,8 +9,8 @@ public class Kauppa {
     private String kaupanTili;
 
     public Kauppa() {
-        varasto = Varasto.getInstance();
-        pankki = Pankki.getInstance();
+        varasto = new Varasto();
+        pankki = new Pankki();
         viitegeneraattori = Viitegeneraattori.getInstance();
         kaupanTili = "33333-44455";
     }
